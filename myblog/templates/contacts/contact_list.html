@@ -1,0 +1,29 @@
+{%extends "base.html"%}
+
+
+{% block content %}
+<div class="m-4 text-center">
+    <a href="{%url 'contact_create'%}" class="btn btn-info">Ajouter contact</a>
+</div>
+
+<div class="row">
+    <div class="col-md m-auto">
+        <div class="card card-body">
+            {%if contacts%}
+            <ul class="list-group list-group-flush">
+            {%for post in contacts%}
+            <li class="list-group-item ">
+                <a class="text-inline" href="{%url 'contact_detail' post.id%}">
+                    {{post.name}} {{post.lastname}}
+                </a>
+             
+            </li>
+            {%endfor%}  
+        </ul>
+        {%else%}
+        <p class="text-center fw-bold ">Il n'y a pas de contact</p>
+        {%endif%}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{%extends "base.html"%}
+
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h1 class="text-center">Ajouter un contact</h1>
+    <div class="card mt-4">
+        <div class="card-body">
+            <form action="" method="post">
+                {%csrf_token%}
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" class="form-control" name="nom" value="{{contact.name}}">
+                <label for="prenom">Prenom</label>
+                <input type="text" class="form-control" name="prenom" value="{{contact.lastname}}">
+                <label for="telephone">Telephone</label>
+                <input type="text" class="form-control" name="telephone" value="{{contact.phonenumber}}">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" name="email" value="{{contact.email}}">
+                <button class="btn btn-primary mt-4" type="submit">Enregistrer</button>
+            </form>
+        </div>
+
+        </div>
+    </div>
+    </div>
+</div>
+
+
+{% endblock %}
